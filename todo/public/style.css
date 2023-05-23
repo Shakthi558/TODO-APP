@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(75, 74, 74);
+    margin-top:0px;
+    margin-left: 0px;
+    margin-right:0px;
+}
+.title-box{
+    text-align: center;
+    background-color:gray;
+    margin-top: 0;
+
+    
+}
+h1{
+    margin-top: 0px;
+}
+.input-box{
+    margin:auto;
+    width: 50%;
+    height: 10vh;
+    background-color: gray;
+    text-align: center;
+}
+.field{
+    border: none;
+    background-color: gray;
+    border-color: transparent;
+    color:black;
+    
+
+}
+.entry-box{
+    margin:auto;
+    text-align: center;
+
+}

@@ -3,10 +3,13 @@ body{
     margin-top:0px;
     margin-left: 0px;
     margin-right:0px;
+    background-image: url(back.jpg);
+    background-size: cover;
+    height: 100vh;;
 }
 .title-box{
     text-align: center;
-    background-color:gray;
+    background-color:#2596be;
     margin-top: 0;
 
     
@@ -18,13 +21,13 @@ h1{
     margin:auto;
     width: 50%;
     height: 10vh;
-    background-color: gray;
+    background-color:#063970;
     text-align: center;
 }
 .field{
     border: none;
     background-color: gray;
-    border-color: transparent;
+    
     color:black;
     
 

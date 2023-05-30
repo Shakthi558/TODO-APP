@@ -4,6 +4,8 @@ import React, { useState } from "react";
 function App() {
   var [item, setItem] = useState("");
   var [task, setTask] = useState([]);
+  const [done,setDone] = useState(false)
+ 
   function createItem(event) {
     event.preventDefault();
     setItem(event.target.value)
@@ -25,19 +27,21 @@ function App() {
 
   }
   function createCard(li) {
+   
+   
     
     return <div className="card-outer">
 
       
       <ul>
-        <li>
+        <li >
           <div className="eachList">
           <div class="row con">
-            <div class="col-10 coln">
+            <div style={{textDecoration : done ? "line-through":null}} class="col-10 coln">
           <Card name={li} />
           </div>
           <div class="col-2 coln">
-            <button className="del">DEL</button>
+            <button id="delbutton" onClick={()=>setDone(!done)} className="del">{done?"Undo":"Mark it done"}</button>
           </div>
           </div>
           </div>
@@ -54,7 +58,7 @@ function App() {
       <form>
         <label className="tex" for="todo">Type something to do</label><br></br>
         <input className="input-box tex" type="text" placeholder="Enter the task to add" onChange={createItem}></input>
-        <button type="button" onClick={createTask}>Add</button>
+        <button onClick={createTask}>Add</button>
       </form>
     </div>
     <div className="nest">

@@ -41,7 +41,7 @@ function App() {
           <Card name={li} />
           </div>
           <div class="col-2 coln">
-            <button id="delbutton" onClick={()=>setDone(!done)} className="del">{done?"Undo":"Mark it done"}</button>
+            <button id="delbutton" onClick={()=>setDone(!done)} className="del btn btn-primary btn-large">{done?"Undo":"Mark it done"}</button>
           </div>
           </div>
           </div>

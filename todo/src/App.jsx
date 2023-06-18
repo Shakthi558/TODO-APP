@@ -4,55 +4,67 @@ import React, { useState } from "react";
 function App() {
   var [item, setItem] = useState("");
   var [task, setTask] = useState([]);
-  const [done,setDone] = useState(false)
- 
+  const [done, setDone] = useState(false)
+
   function createItem(event) {
     event.preventDefault();
     setItem(event.target.value)
   }
   function createTask(event) {
     event.preventDefault();
-
-    setTask(cur => [...cur, item])
+    let id = 1
+    if (task.length > 0) {
+      id = task.length + 1
+    }
+    let taskdet = { id: id, desc: item }
+    let newtask = [...task, taskdet]
+    setTask(newtask)
   }
-
-
+  
 
   function Card(props) {
     return <div className="card-outer">
-      
-          {props.name}
-    
+      {props.id}
+      {props.name}
+
     </div>
 
   }
-  function createCard(li) {
-   
-   
-    
+  function createCard(task) {
+
+
+
     return <div className="card-outer">
 
-      
+
       <ul>
+        <input type="checkbox" />
         <li >
+
           <div className="eachList">
-          <div class="row con">
-            <div style={{textDecoration : done ? "line-through":null}} class="col-10 coln">
-          <Card name={li} />
-          </div>
-          <div class="col-2 coln">
-            <button id="delbutton" onClick={()=>setDone(!done)} className="del btn btn-primary btn-large">{done?"Undo":"Mark it done"}</button>
-          </div>
-          </div>
+
+            <div class="row con">
+
+              <div style={{ textDecoration: done ? "line-through" : null }} class="col-10 coln">
+
+                <Card name={task.desc} id={task.id} />
+              </div>
+              <div class="col-2 coln">
+                <button id="delbutton" onClick={() =>
+                 {setDone(!done)}} className="del btn btn-primary btn-large">{done ? "Undo" : "Mark it done"}</button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
-    
+
     </div>
   }
 
   return <div> <div className="title-box">
-    <h1>TODO </h1></div>
+    <h1>TODO </h1>
+    <h2>Total list items : {task.length}</h2>
+  </div>
     <div className="list-box"></div>
     <div className="entry-box">
       <form>

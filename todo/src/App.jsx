@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 
 
+
+
+
 function App() {
   var [item, setItem] = useState("");
   var [task, setTask] = useState([]);
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(false);
+
+  
 
   function createItem(event) {
     event.preventDefault();
     setItem(event.target.value)
   }
-  function createTask(event) {
+  function CreateTask(event) {
     event.preventDefault();
     let id = 1
     if (task.length > 0) {
       id = task.length + 1
     }
     let taskdet = { id: id, desc: item }
+   
     let newtask = [...task, taskdet]
     setTask(newtask)
+   
+
+    
   }
   
 
@@ -31,6 +40,7 @@ function App() {
 
   }
   function createCard(task) {
+    
 
 
 
@@ -70,7 +80,7 @@ function App() {
       <form>
         <label className="tex" for="todo">Type something to do</label><br></br>
         <input className="input-box tex" type="text" placeholder="Enter the task to add" onChange={createItem}></input>
-        <button onClick={createTask}>Add</button>
+        <button onClick={CreateTask}  >Add</button>
       </form>
     </div>
     <div className="nest">

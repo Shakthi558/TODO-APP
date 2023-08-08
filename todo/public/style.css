@@ -58,7 +58,11 @@ h1{
     margin: auto;
     background-color: aliceblue;
     color: black;
-    
+
+}
+.checkbox-design{
+    float: left;
+    align-items:self-start;
 }
 button{
     height: 6vh;
@@ -119,4 +123,7 @@ height: auto;
 }
 ul{
     border-radius: 10px;
+}
+.decor{
+    text-decoration: line-through;
 }
